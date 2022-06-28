@@ -35,5 +35,15 @@ public class PersonFieldTest {
         field.set(object,"令狐冲");
         System.out.println("修改后成员变量的值是: "+ field.get(object));
 
+        System.out.println("--------------------------");
+        // 5. 获取 Class 对象中所有的成员变量
+        Field[] fields = c1.getDeclaredFields();
+        for (Field f : fields) {
+            System.out.println("成员变量的访问修饰符: "+ f.getModifiers());
+            System.out.println("成员变量的数据类型为: "+ f.getType());
+            System.out.println("成员变量的数据名称为: "+ f.getName());
+            System.out.println("----------------------");
+        }
+
     }
 }
